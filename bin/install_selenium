@@ -13,6 +13,11 @@ else
    CHROMEDRIVER_URL=$CHROMEDRIVER_MAC_URL
 fi
 
+echo $unamestr > env
+echo $SELENIUM_URL >> env
+echo $CHROMEDRIVER_URL >> env
+cat env
+
 mkdir -p $SEL_DIR
 rm -rf $SEL_DIR/*
 cd $SEL_DIR
@@ -22,8 +27,4 @@ wget $CHROMEDRIVER_URL
 unzip chromedriver*.zip
 rm chromedriver*.zip
 mv selenium-server-standalone*.jar selenium-server-standalone.jar
-
-echo $unamestr > env
-echo $SELENIUM_URL >> env
-echo $CHROMEDRIVER_URL >> env
 
