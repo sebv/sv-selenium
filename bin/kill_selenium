@@ -1,0 +1,6 @@
+#!/bin/bash
+PID=`ps -ef | grep selenium-server | grep -v grep | awk '{print $2}'`
+if [ $PID ] ; then
+    kill -9 $PID
+fi
+
