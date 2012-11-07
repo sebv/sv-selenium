@@ -13,10 +13,10 @@ else
    CHROMEDRIVER_URL=$CHROMEDRIVER_MAC_URL
 fi
 
-echo $unamestr > env
-echo $SELENIUM_URL >> env
-echo $CHROMEDRIVER_URL >> env
-cat env
+echo $unamestr > $SEL_DIR/env
+echo $SELENIUM_URL >> $SEL_DIR/env
+echo $CHROMEDRIVER_URL >> $SEL_DIR/env
+cat $SEL_DIR/env
 
 mkdir -p $SEL_DIR
 rm -rf $SEL_DIR/*
