@@ -1,5 +1,5 @@
 #!/bin/bash
 cd temp/sv-selenium
 pwd
-java -jar selenium-server-standalone.jar -Dwebdriver.chrome.driver=./chromedriver
+java -jar selenium-server-standalone.jar
 

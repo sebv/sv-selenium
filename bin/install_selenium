@@ -3,28 +3,14 @@ SEL_DIR='temp/sv-selenium'
 
 SELENIUM_URL='http://selenium.googlecode.com/files/selenium-server-standalone-2.28.0.jar'
 
-CHROMEDRIVER_LINUX_URL='http://chromedriver.googlecode.com/files/chromedriver_linux32_26.0.1383.0.zip'
-CHROMEDRIVER_MAC_URL='http://chromedriver.googlecode.com/files/chromedriver_mac_26.0.1383.0.zip'
-
-unamestr=`uname`
-if [[ "$unamestr" == 'Linux' ]]; then
-   CHROMEDRIVER_URL=$CHROMEDRIVER_LINUX_URL
-else 
-   CHROMEDRIVER_URL=$CHROMEDRIVER_MAC_URL
-fi
-
-echo $unamestr > $SEL_DIR/env
-echo $SELENIUM_URL >> $SEL_DIR/env
-echo $CHROMEDRIVER_URL >> $SEL_DIR/env
-cat $SEL_DIR/env
+echo $SELENIUM_URL >> $SEL_DIR/selenium_env
+cat $SEL_DIR/selenium_env
 
 mkdir -p $SEL_DIR
-rm -rf $SEL_DIR/*
+rm -rf $SEL_DIR/selenium-server*
 cd $SEL_DIR
 
 wget $SELENIUM_URL 
-wget $CHROMEDRIVER_URL 
-unzip chromedriver*.zip
-rm chromedriver*.zip
+
 mv selenium-server-standalone*.jar selenium-server-standalone.jar
 
