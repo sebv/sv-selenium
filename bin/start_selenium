@@ -1,4 +1,5 @@
 #!/bin/bash
 cd temp/sv-selenium
-java -jar selenium-server-standalone.jar -Dfile.encoding=UTF8 -Dwebdriver.chrome.driver="./chromedriver"
+pwd
+java -jar selenium-server-standalone.jar -Dfile.encoding=UTF8 -Dwebdriver.chrome.driver="`pwd`/chromedriver"
 
