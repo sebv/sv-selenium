@@ -1,10 +1,10 @@
 #!/bin/bash
 SEL_DIR='temp/sv-selenium'
 
-SELENIUM_URL='http://selenium.googlecode.com/files/selenium-server-standalone-2.25.0.jar'
+SELENIUM_URL='http://selenium.googlecode.com/files/selenium-server-standalone-2.28.0.jar'
 
-CHROMEDRIVER_LINUX_URL='http://chromedriver.googlecode.com/files/chromedriver_linux32_23.0.1240.0.zip'
-CHROMEDRIVER_MAC_URL='http://chromedriver.googlecode.com/files/chromedriver_mac_23.0.1240.0.zip'
+CHROMEDRIVER_LINUX_URL='http://chromedriver.googlecode.com/files/chromedriver_linux32_26.0.1240.0.zip'
+CHROMEDRIVER_MAC_URL='http://chromedriver.googlecode.com/files/chromedriver_mac_26.0.1240.0.zip'
 
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
