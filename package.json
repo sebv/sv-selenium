@@ -10,6 +10,7 @@
   "bin": {
     "install_selenium": "bin/install_selenium",
     "start_selenium": "bin/start_selenium",
+    "start_selenium_dev": "bin/start_selenium_dev",
     "kill_selenium": "bin/kill_selenium"
   },
   "repository": {
