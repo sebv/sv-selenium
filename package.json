@@ -9,7 +9,9 @@
   },
   "bin": {
     "install_selenium": "bin/install_selenium",
+    "install_chromedriver": "bin/install_chromedriver",
     "start_selenium": "bin/start_selenium",
+    "start_selenium_with_chromedriver": "bin/start_selenium_with_chromedriver",
     "kill_selenium": "bin/kill_selenium"
   },
   "repository": {
