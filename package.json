@@ -1,7 +1,7 @@
 {
   "name": "sv-selenium",
   "description": "tools to install/use selenium",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "homepage": "https://github.com/seb/sv-selenium",
   "author": {
     "name": "Sebastien Vincent",
