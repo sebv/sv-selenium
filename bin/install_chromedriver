@@ -1,8 +1,8 @@
 #!/bin/bash
 SEL_DIR='temp/sv-selenium'
 
-CHROMEDRIVER_LINUX_URL='https://chromedriver.googlecode.com/files/chromedriver_linux32_2.2.zip'
-CHROMEDRIVER_MAC_URL='https://chromedriver.googlecode.com/files/chromedriver_mac32_2.2.zip'
+CHROMEDRIVER_LINUX_URL='http://chromedriver.storage.googleapis.com/2.4/chromedriver_linux32.zip'
+CHROMEDRIVER_MAC_URL='http://chromedriver.storage.googleapis.com/2.4/chromedriver_mac32.zip'
 
 unamestr=`uname`
 if [[ "$unamestr" == 'Linux' ]]; then
