@@ -1,5 +1,7 @@
 #!/bin/bash
-cd temp/sv-selenium
+SEL_DIR='/tmp/sv-selenium'
+
+cd $SEL_DIR
 pwd
 java -jar selenium-server-standalone.jar -Dwebdriver.chrome.driver=./chromedriver
 

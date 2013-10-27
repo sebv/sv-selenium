@@ -1,5 +1,5 @@
 #!/bin/bash
-SEL_DIR='temp/sv-selenium'
+SEL_DIR='/tmp/sv-selenium'
 
 SELENIUM_URL='https://selenium.googlecode.com/files/selenium-server-standalone-2.37.0.jar'
 

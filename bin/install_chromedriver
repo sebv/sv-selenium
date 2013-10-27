@@ -1,5 +1,5 @@
 #!/bin/bash
-SEL_DIR='temp/sv-selenium'
+SEL_DIR='/tmp/sv-selenium'
 
 CHROMEDRIVER_LINUX_URL='http://chromedriver.storage.googleapis.com/2.4/chromedriver_linux32.zip'
 CHROMEDRIVER_MAC_URL='http://chromedriver.storage.googleapis.com/2.4/chromedriver_mac32.zip'

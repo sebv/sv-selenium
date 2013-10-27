@@ -1,0 +1,11 @@
+#!/bin/bash
+CONNECT_DIR="/tmp/sv-selenium"
+
+CONNECT_URL="http://saucelabs.com/downloads/Sauce-Connect-latest.zip"
+CONNECT_DOWNLOAD="Sauce_Connect.zip"
+
+mkdir -p $CONNECT_DIR
+cd $CONNECT_DIR
+curl $CONNECT_URL > $CONNECT_DOWNLOAD
+unzip $CONNECT_DOWNLOAD
+rm $CONNECT_DOWNLOAD

@@ -12,7 +12,9 @@
     "install_chromedriver": "bin/install_chromedriver",
     "start_selenium": "bin/start_selenium",
     "start_selenium_with_chromedriver": "bin/start_selenium_with_chromedriver",
-    "kill_selenium": "bin/kill_selenium"
+    "kill_selenium": "bin/kill_selenium",
+    "install_sauce_connect" : "bin/install_sauce_connect",
+    "start_sauce_connect" : "bin/start_sauce_connect"
   },
   "repository": {
     "type": "git",
