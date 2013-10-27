@@ -1,7 +1,7 @@
 {
   "name": "sv-selenium",
   "description": "tools to install/use selenium",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "homepage": "https://github.com/seb/sv-selenium",
   "author": {
     "name": "Sebastien Vincent",
@@ -13,8 +13,8 @@
     "start_selenium": "bin/start_selenium",
     "start_selenium_with_chromedriver": "bin/start_selenium_with_chromedriver",
     "kill_selenium": "bin/kill_selenium",
-    "install_sauce_connect" : "bin/install_sauce_connect",
-    "start_sauce_connect" : "bin/start_sauce_connect"
+    "install_sauce_connect": "bin/install_sauce_connect",
+    "start_sauce_connect": "bin/start_sauce_connect"
   },
   "repository": {
     "type": "git",
