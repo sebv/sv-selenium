@@ -9,13 +9,4 @@ CONNECT_DIR="/tmp/sv-selenium"
 READY_FILE="connect-ready-$RANDOM"
 
 cd $CONNECT_DIR
-java -jar Sauce-Connect.jar --readyfile $READY_FILE \
-    $SAUCE_USERNAME $SAUCE_ACCESS_KEY > sauce_connect.log &
-
-echo 'waiting for sauce connect to start'
-# tail -f sauce_connect.log &
-
-# Wait for Connect to be ready before exiting
-while [ ! -f $READY_FILE ]; do
-  sleep .5
-done
+java -jar Sauce-Connect.jar $SAUCE_USERNAME $SAUCE_ACCESS_KEY
