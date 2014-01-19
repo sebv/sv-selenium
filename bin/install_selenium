@@ -1,7 +1,7 @@
 #!/bin/bash
 SEL_DIR='/tmp/sv-selenium'
 
-SELENIUM_URL='https://selenium.googlecode.com/files/selenium-server-standalone-2.37.0.jar'
+SELENIUM_URL='https://selenium.googlecode.com/files/selenium-server-standalone-2.39.0.jar'
 
 echo $SELENIUM_URL >> $SEL_DIR/selenium_env
 cat $SEL_DIR/selenium_env
