@@ -14,7 +14,15 @@ mkdir -p $SEL_DIR
 rm -rf $SEL_DIR/chromedriver*
 cd $SEL_DIR
 
-wget $CHROMEDRIVER_URL
+if [ `which wget` ]; then
+  wget $CHROMEDRIVER_URL
+elif [ `which curl` ]; then
+  curl -O $CHROMEDRIVER_URL
+else
+  echo "No wget or curl in path"
+  exit 1
+fi
+
 unzip chromedriver*.zip
 rm chromedriver*.zip
 

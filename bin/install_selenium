@@ -10,6 +10,14 @@ mkdir -p $SEL_DIR
 rm -rf $SEL_DIR/selenium-server*
 cd $SEL_DIR
 
-wget $SELENIUM_URL
+if [ `which wget` ]; then
+  wget $SELENIUM_URL
+elif [ `which curl` ]; then
+  curl -O $SELENIUM_URL
+else
+  echo "No wget or curl in path"
+  exit 1
+fi
+
 
 mv selenium-server-standalone*.jar selenium-server-standalone.jar
