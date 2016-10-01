@@ -5,22 +5,20 @@
 # SAUCE_ACCESS_KEY
 # Follow the steps at https://saucelabs.com/opensource/travis to set that up.
 
-CONNECT_DIR="/tmp/sv-selenium"
+source "$(dirname "$0")/setup.sh"
+
 CONNECT_VERSION=4.4.0
+
 READY_FILE="connect-ready-$RANDOM"
 
-mac_start() {
-    cd $CONNECT_DIR
-    sc-${CONNECT_VERSION}-osx/bin/sc $SAUCE_USERNAME $SAUCE_ACCESS_KEY
-}
-linux_start() {
-    echo "TODO"
-}
+cd $SEL_DIR
 
-if [[ "$(uname)" == "Linux" ]]; then
-    linux_start
-elif [[ "$(uname)" == "Darwin" ]]; then
-    mac_start
+if [[ "${SV_S_BINARIES}" == 'Linux64'  ]]; then
+    sc-${CONNECT_VERSION}-linux/bin/sc $SAUCE_USERNAME $SAUCE_ACCESS_KEY
+elif [[ "${SV_S_BINARIES}" == 'Linux'  ]]; then
+    sc-${CONNECT_VERSION}-linux32/bin/sc $SAUCE_USERNAME $SAUCE_ACCESS_KEY
+elif [[ "${SV_S_BINARIES}" == 'Mac'  ]]; then
+    sc-${CONNECT_VERSION}-osx/bin/sc $SAUCE_USERNAME $SAUCE_ACCESS_KEY
 else
    echo "OS not supported"
    exit 1

@@ -1,5 +1,6 @@
 #!/bin/bash
-SEL_DIR='/tmp/sv-selenium'
+
+source "$(dirname "$0")/setup.sh"
 
 cd $SEL_DIR
 pwd

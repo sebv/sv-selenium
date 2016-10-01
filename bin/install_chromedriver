@@ -1,20 +1,22 @@
 #!/bin/bash
-SEL_DIR='/tmp/sv-selenium'
+
+source "$(dirname "$0")/setup.sh"
+
 CHROMEDRIVER_LINUX_32_URL='http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux32.zip'
 CHROMEDRIVER_LINUX_64_URL='http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip'
 CHROMEDRIVER_MAC_URL='http://chromedriver.storage.googleapis.com/2.24/chromedriver_mac64.zip'
 
-if [ [ "$(uname)" == "Linux" ] && [ "$(uname -a)" == *"x86_64"* ] ]; then
+if [[ "${SV_S_BINARIES}" == 'Linux64'  ]]; then
    CHROMEDRIVER_URL=$CHROMEDRIVER_LINUX_64_URL
-elif [[ "$(uname)" == "Linux" ]]; then
+elif [[ "${SV_S_BINARIES}" == 'Linux'  ]]; then
    CHROMEDRIVER_URL=$CHROMEDRIVER_LINUX_32_URL
-elif [[ "$(uname)" == "Darwin" ]]; then
-   CHROMEDRIVER_URL=$CHROMEDRIVER_MAC_URL
+elif [[ "${SV_S_BINARIES}" == 'Mac'  ]]; then
+   CONNECT_URL=$CONNECT_MAC_URL
+   unpack_zip
 else
    echo "OS not supported"
    exit 1
 fi
-
 mkdir -p $SEL_DIR
 rm -rf $SEL_DIR/chromedriver*
 cd $SEL_DIR
