@@ -1,13 +1,18 @@
 #!/bin/bash
 SEL_DIR='/tmp/sv-selenium'
-CHROMEDRIVER_LINUX_URL='http://chromedriver.storage.googleapis.com/2.15/chromedriver_linux32.zip'
-CHROMEDRIVER_MAC_URL='http://chromedriver.storage.googleapis.com/2.15/chromedriver_mac32.zip'
+CHROMEDRIVER_LINUX_32_URL='http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux32.zip'
+CHROMEDRIVER_LINUX_64_URL='http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip'
+CHROMEDRIVER_MAC_URL='http://chromedriver.storage.googleapis.com/2.24/chromedriver_mac64.zip'
 
-unamestr=`uname`
-if [[ "$unamestr" == 'Linux' ]]; then
-   CHROMEDRIVER_URL=$CHROMEDRIVER_LINUX_URL
-else
+if [ [ "$(uname)" == "Linux" ] && [ "$(uname -a)" == *"x86_64"* ] ]; then
+   CHROMEDRIVER_URL=$CHROMEDRIVER_LINUX_64_URL
+elif [[ "$(uname)" == "Linux" ]]; then
+   CHROMEDRIVER_URL=$CHROMEDRIVER_LINUX_32_URL
+elif [[ "$(uname)" == "Darwin" ]]; then
    CHROMEDRIVER_URL=$CHROMEDRIVER_MAC_URL
+else
+   echo "OS not supported"
+   exit 1
 fi
 
 mkdir -p $SEL_DIR

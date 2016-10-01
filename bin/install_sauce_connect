@@ -1,11 +1,41 @@
 #!/bin/bash
 CONNECT_DIR="/tmp/sv-selenium"
+CONNECT_VERSION=4.4.0
 
-CONNECT_URL="http://saucelabs.com/downloads/Sauce-Connect-latest.zip"
-CONNECT_DOWNLOAD="Sauce_Connect.zip"
+CONNECT_LINUX_64_URL="https://saucelabs.com/downloads/sc-${CONNECT_VERSION}-linux.tar.gz"
+CONNECT_LINUX_32_URL="https://saucelabs.com/downloads/sc-${CONNECT_VERSION}-linux32.tar.gz"
+CONNECT_MAC_URL="https://saucelabs.com/downloads/sc-${CONNECT_VERSION}-osx.zip"
 
-mkdir -p $CONNECT_DIR
-cd $CONNECT_DIR
-curl $CONNECT_URL > $CONNECT_DOWNLOAD
-unzip $CONNECT_DOWNLOAD
-rm $CONNECT_DOWNLOAD
+unpack_zip() {
+    CONNECT_DOWNLOAD="Sauce_Connect.zip"
+
+    mkdir -p $CONNECT_DIR
+    cd $CONNECT_DIR
+    curl $CONNECT_URL > $CONNECT_DOWNLOAD
+    unzip $CONNECT_DOWNLOAD
+    rm $CONNECT_DOWNLOAD
+}
+
+unpack_tar_gz() {
+    CONNECT_DOWNLOAD="Sauce_Connect.tgz"
+
+    mkdir -p $CONNECT_DIR
+    cd $CONNECT_DIR
+    curl $CONNECT_URL > $CONNECT_DOWNLOAD
+    tar xfz $CONNECT_DOWNLOAD
+    rm $CONNECT_DOWNLOAD
+}
+
+if [ [ "$(uname)" == "Linux" ] && [ "$(uname -a)" == *"x86_64"* ] ]; then
+   CONNECT_URL=$CONNECT_LINUX_64_URL
+   unpack_tar_gz
+elif [[ "$(uname)" == "Linux" ]]; then
+   CONNECT_URL=$CONNECT_LINUX_32_URL
+   unpack_tar_gz
+elif [[ "$(uname)" == "Darwin" ]]; then
+   CONNECT_URL=$CONNECT_MAC_URL
+   unpack_zip
+else
+   echo "OS not supported"
+   exit 1
+fi

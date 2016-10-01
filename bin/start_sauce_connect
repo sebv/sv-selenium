@@ -6,7 +6,22 @@
 # Follow the steps at https://saucelabs.com/opensource/travis to set that up.
 
 CONNECT_DIR="/tmp/sv-selenium"
+CONNECT_VERSION=4.4.0
 READY_FILE="connect-ready-$RANDOM"
 
-cd $CONNECT_DIR
-java -jar Sauce-Connect.jar $SAUCE_USERNAME $SAUCE_ACCESS_KEY
+mac_start() {
+    cd $CONNECT_DIR
+    sc-${CONNECT_VERSION}-osx/bin/sc $SAUCE_USERNAME $SAUCE_ACCESS_KEY
+}
+linux_start() {
+    echo "TODO"
+}
+
+if [[ "$(uname)" == "Linux" ]]; then
+    linux_start
+elif [[ "$(uname)" == "Darwin" ]]; then
+    mac_start
+else
+   echo "OS not supported"
+   exit 1
+fi
