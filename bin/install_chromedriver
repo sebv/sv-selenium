@@ -2,9 +2,9 @@
 
 source "$(dirname "$0")/setup.sh"
 
-CHROMEDRIVER_LINUX_32_URL='http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux32.zip'
-CHROMEDRIVER_LINUX_64_URL='http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip'
-CHROMEDRIVER_MAC_URL='http://chromedriver.storage.googleapis.com/2.24/chromedriver_mac64.zip'
+CHROMEDRIVER_LINUX_32_URL='http://chromedriver.storage.googleapis.com/2.32/chromedriver_linux32.zip'
+CHROMEDRIVER_LINUX_64_URL='http://chromedriver.storage.googleapis.com/2.32/chromedriver_linux64.zip'
+CHROMEDRIVER_MAC_URL='http://chromedriver.storage.googleapis.com/2.32/chromedriver_mac64.zip'
 
 if [[ "${SV_S_BINARIES}" == 'Linux64'  ]]; then
    CHROMEDRIVER_URL=$CHROMEDRIVER_LINUX_64_URL
@@ -32,4 +32,3 @@ fi
 
 unzip chromedriver*.zip
 rm chromedriver*.zip
-
